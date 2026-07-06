@@ -7,8 +7,12 @@ on:
       - main
 
 jobs:
-  example-job:
-    runs-on: ubuntu-latest
+  First-job:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [20, 22]
     environment: megz
 
 
@@ -19,3 +23,11 @@ jobs:
         run: echo "Password is ${{ secrets.PASS }}"
       - run: echo "APP_ENV=staging" >> "$GITHUB_ENV"
       - run: echo "$APP_ENV"
+      - name: check code
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: confirm version
+        run: npm test
