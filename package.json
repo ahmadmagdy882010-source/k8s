@@ -1,0 +1,9 @@
+{
+  "name": "k8s-github-actions-test",
+  "version": "1.0.0",
+  "description": "Simple Node test script for GitHub Actions workflow",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "devDependencies": {}
+}
