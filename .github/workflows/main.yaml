@@ -14,4 +14,4 @@ jobs:
 
     steps:
       - name: print a welcome message
-        run: echo "welcome ya prins ${{ vars.TEST }}"
+        run: echo "welcome ya prins ${{ vars.TEST }} ${{ vars.DAD }}"
