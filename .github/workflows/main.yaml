@@ -17,3 +17,5 @@ jobs:
         run: echo "welcome ya prins ${{ vars.TEST }} ${{ vars.DAD }}"
       - name: password test
         run: echo "Password is ${{ secrets.PASS }}"
+      - run: echo "APP_ENV=staging" >> "$GITHUB_ENV"
+      - run: echo "$APP_ENV"
